@@ -35,10 +35,22 @@ end
 
 @inline function Pkg.API.add(versioned_package::VersionedPackage)
     package_spec = _convert_to_package_spec(versioned_package)::Pkg.Types.PackageSpec
-    return Pkg.add(package_spec)
+    return Pkg.API.add(package_spec)
 end
 
 @inline function Pkg.API.add(versioned_packages::AbstractVector{<:VersionedPackage})
     package_specs = _convert_to_package_spec.(versioned_packages)
-    return Pkg.add(package_specs)
+    return Pkg.API.add(package_specs)
+end
+
+# Note: Pkg.API.pin == Pkg.pin
+
+@inline function Pkg.API.pin(versioned_package::VersionedPackage)
+    package_spec = _convert_to_package_spec(versioned_package)::Pkg.Types.PackageSpec
+    return Pkg.API.pin(package_spec)
+end
+
+@inline function Pkg.API.pin(versioned_packages::AbstractVector{<:VersionedPackage})
+    package_specs = _convert_to_package_spec.(versioned_packages)
+    return Pkg.API.pin(package_specs)
 end
