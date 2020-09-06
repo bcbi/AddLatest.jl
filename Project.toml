@@ -1,7 +1,7 @@
 name = "AddLatest"
 uuid = "404e4c7d-d40a-4c57-9c40-90ee175e5491"
 authors = ["Dilum Aluthge"]
-version = "0.1.0"
+version = "0.1.0-DEV"
 
 [compat]
 julia = "1.5"
