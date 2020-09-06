@@ -1,10 +1,3 @@
-@inline function always_assert(condition::Bool, msg::String)
-    if !condition
-        throw(AlwaysAssertionException(msg))
-    end
-    return nothing
-end
-
 @inline function assert_package_found(package_was_found::Bool, name, uuid)
     if !package_was_found
         if uuid === nothing
