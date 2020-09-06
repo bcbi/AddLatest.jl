@@ -40,7 +40,7 @@ import UUIDs
         end
     end
     
-    Base.empty!(cache)
+    Base.empty!(cache_1)
 
     @testset "Doctests" begin
         Documenter.doctest(AddLatest)
