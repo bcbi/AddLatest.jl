@@ -18,6 +18,7 @@ import UUIDs
                 cache = RegistryParsingCache()
                 @testset "name only" begin
                     Pkg.add(latest("Example"; cache = cache))
+                    Pkg.add(latest("Example"; cache = cache, registries = ["https://github.com/JuliaRegistries/General.git"]))
                     Pkg.add([latest("Example"; cache = cache)])
                     Pkg.add(AddLatest._convert_to_package_spec(latest("Example"; cache = cache)))
                     Pkg.add(Pkg.Types.PackageSpec(latest("Example"; cache = cache)))
