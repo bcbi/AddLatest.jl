@@ -20,6 +20,22 @@ import UUIDs
                 @test_throws AddLatest.RegistriesDisagreeException AddLatest.assert_no_disagreement(a, b)
             end
         end
+
+        @testset "parse-registry.jl" begin
+            let 
+                versions = Dict()
+                versions["1.0.0"] = Dict()
+                versions["1.0.0"]["yanked"] = true
+                AddLatest._delete_yanked_versions!(versions)
+            end
+            let 
+                versions = Dict()
+                versions["1.0.0"] = Dict()
+                versions["1.0.0"]["yanked"] = false
+                AddLatest._delete_yanked_versions!(versions)
+            end
+        end
+
         @testset "registry-list.jl" begin
             @test AbstractRegistry(LocalFolderRegistry("foo")) == LocalFolderRegistry("foo")
         end
