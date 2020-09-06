@@ -7,6 +7,9 @@ import UUIDs
 
 @testset "AddLatest.jl" begin
     @testset "Unit tests" begin
+        @testset "registry-list.jl" begin
+            @test AbstractRegistry(LocalFolderRegistry("foo")) == LocalFolderRegistry("foo")
+        end
     end
 
     @testset "Integration tests" begin
