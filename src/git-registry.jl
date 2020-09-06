@@ -10,6 +10,7 @@ Example usage:
 julia> registry = GitRegistry("https://github.com/JuliaRegistries/General.git")
 
 julia> parseresult = parse_registry(registry)
+```
 """
 @inline function parse_registry(registry::GitRegistry)
     temp_directory = mktempdir(; cleanup = true)
