@@ -4,11 +4,12 @@ import UUIDs
 @inline function _convert_to_package_spec(versioned_package::VersionedPackage)
     name = versioned_package.name::String
     uuid = versioned_package.uuid::UUIDs.UUID
+    version = versioned_package.version::String
     tree = versioned_package.tree::String
     package_spec = Pkg.API.Package(
         name = name,
         uuid = uuid,
-        rev = tree,
+        version = version,
     )::Pkg.Types.PackageSpec
     return package_spec
 end
