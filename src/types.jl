@@ -35,11 +35,6 @@ struct VersionAndTree
     tree::String
 end
 
-@inline function VersionAndTree(version::AbstractString, tree::AbstractString)
-    versionnumber = VersionNumber(version)
-    return VersionAndTree(version, versionnumber, tree)
-end
-
 """
 Supertype for all registry types.
 """
