@@ -50,8 +50,10 @@ import UUIDs
                 
                 @testset "name only" begin
                     Pkg.add(latest("Example"; cache = cache_1))
+                    Pkg.pin(latest("Example"; cache = cache_1))
                     Pkg.add(latest("Example"; cache = cache_1, registries = ["https://github.com/JuliaRegistries/General.git"]))
                     Pkg.add([latest("Example"; cache = cache_1)])
+                    Pkg.pin([latest("Example"; cache = cache_1)])
                     Pkg.add(AddLatest._convert_to_package_spec(latest("Example"; cache = cache_1)))
                     Pkg.add(Pkg.Types.PackageSpec(latest("Example"; cache = cache_1)))
                     Pkg.add(Pkg.API.Package(latest("Example"; cache = cache_1)))
