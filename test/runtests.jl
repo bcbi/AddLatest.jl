@@ -17,7 +17,7 @@ import UUIDs
             let 
                 a = AddLatest.VersionAndTree("1.0.0", "foo")
                 b = AddLatest.VersionAndTree("1.0.0", "bar")
-                @test_throws AddLatest.RegistriesDisagreeException AddLatest.assert_no_ambiguity(a, b)
+                @test_throws AddLatest.RegistriesDisagreeException AddLatest.assert_no_disagreement(a, b)
             end
         end
         @testset "registry-list.jl" begin
