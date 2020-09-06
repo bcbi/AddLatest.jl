@@ -1,5 +1,24 @@
 module AddLatest
 
-# Write your package code here.
+import LibGit2
+import Pkg
+import UUIDs
 
-end
+export AbstractRegistry
+export GitRegistry
+export LocalFolderRegistry
+export RegistryParsingCache
+export VersionedPackage
+export latest
+
+include("types.jl")
+
+include("assert.jl")
+include("git-registry.jl")
+include("identify-package.jl")
+include("latest.jl")
+include("parse-registry.jl")
+include("pkg-api.jl")
+include("registry-list.jl")
+
+end # end module AddLatest
