@@ -19,7 +19,7 @@ Please see the [documentation](https://bcbi.github.io/AddLatest.jl/stable/).
 ### Example 1
 
 ```julia
-julia> using AddLatestM
+julia> using AddLatest
 
 julia> using Pkg
 
@@ -29,7 +29,7 @@ julia> Pkg.add(latest("Example"))
 ### Example 2
 
 ```julia
-julia> using AddLatestM
+julia> using AddLatest
 
 julia> using Pkg
 
