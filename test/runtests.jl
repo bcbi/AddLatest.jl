@@ -9,6 +9,17 @@ import UUIDs
     cache_1 = RegistryParsingCache()
 
     @testset "Unit tests" begin
+        @testset "assert.jl" begin
+            @test_throws AddLatest.PackageNotFoundException AddLatest.assert_package_found(false, "PkgA", nothing)
+            @test_throws AddLatest.PackageNotFoundException AddLatest.assert_package_found(false, "PkgA", UUIDs.UUID(0))
+            @test_throws AddLatest.PackageAmbiguousException AddLatest.assert_no_ambiguity(true, "PkgA", nothing)
+            @test_throws AddLatest.PackageAmbiguousException AddLatest.assert_no_ambiguity(true, "PkgA", UUIDs.UUID(0))
+            let 
+                a = AddLatest.VersionAndTree("1.0.0", "foo")
+                b = AddLatest.VersionAndTree("1.0.0", "bar")
+                @test_throws AddLatest.RegistriesDisagreeException AddLatest.assert_no_disagreement(a, b)
+            end
+        end
         @testset "registry-list.jl" begin
             @test AbstractRegistry(LocalFolderRegistry("foo")) == LocalFolderRegistry("foo")
         end
