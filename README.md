@@ -12,12 +12,7 @@ version of each package.
 This makes it easy to ensure that you are installing the latest
 version of a Julia package.
 
-Please see the [documentation](https://bcbi.github.io/AddLatest.jl/stable/).
-
-## Quick Examples
-
-### Example 1
-
+Quick start:
 ```julia
 julia> using AddLatest
 
@@ -26,12 +21,4 @@ julia> using Pkg
 julia> Pkg.add(latest("Example"))
 ```
 
-### Example 2
-
-```julia
-julia> using AddLatest
-
-julia> using Pkg
-
-julia> Pkg.add(latest("Example", UUID("7876af07-990d-54b4-ab0e-23690620f79a")))
-```
+Please see the [documentation](https://bcbi.github.io/AddLatest.jl/stable/).
