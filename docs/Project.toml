@@ -1,3 +1,5 @@
 [deps]
 AddLatest = "404e4c7d-d40a-4c57-9c40-90ee175e5491"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+UUIDs = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
